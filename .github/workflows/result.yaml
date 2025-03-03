@@ -1,4 +1,4 @@
-name: Build and Push to GCR
+name: Result- Build and Push to GCR
 
 on:
   workflow_dispatch:
