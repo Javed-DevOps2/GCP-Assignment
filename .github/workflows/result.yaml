@@ -25,10 +25,10 @@ jobs:
       - name: Build Docker Image
         run: |
           cd result
-          docker build -t us.gcr.io/qwiklabs-gcp-03-af77615ff208/result:${{ github.sha }} .
-          docker tag us.gcr.io/qwiklabs-gcp-03-af77615ff208/result:${{ github.sha }} us.gcr.io/qwiklabs-gcp-03-af77615ff208/result:latest
+          docker build -t us.gcr.io/${{ vars.PROJECT_ID }}/result:${{ github.sha }} .
+          docker tag us.gcr.io/${{ vars.PROJECT_ID }}/result:${{ github.sha }} us.gcr.io/${{ vars.PROJECT_ID }}/result:latest
 
       - name: Push Image to GCR
         run: |
-          docker push us.gcr.io/qwiklabs-gcp-03-af77615ff208/result:${{ github.sha }}
-          docker push us.gcr.io/qwiklabs-gcp-03-af77615ff208/result:latest
+          docker push us.gcr.io/${{ vars.PROJECT_ID }}/result:${{ github.sha }}
+          docker push us.gcr.io/${{ vars.PROJECT_ID }}/result:latest
