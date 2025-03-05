@@ -32,4 +32,4 @@ jobs:
       - name: Push Image to GCR
         run: |
           docker push us.gcr.io/${{ vars.PROJECT_ID }}/result:${{ github.sha }}
-          docker push us.gcr.io/${{ vars.PROJECT_ID }}/result:latest
+          docker push us.gcr.io/${{ vars.PROJECT_ID }}/result:latest1
