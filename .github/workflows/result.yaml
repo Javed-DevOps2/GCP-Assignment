@@ -27,9 +27,9 @@ jobs:
           cd result
           echo ${{ vars.PROJECT_ID }}
           docker build -t us.gcr.io/${{ vars.PROJECT_ID }}/result:${{ github.sha }} .
-          docker tag us.gcr.io/${{ vars.PROJECT_ID }}/result:${{ github.sha }} us.gcr.io/${{ vars.PROJECT_ID }}/result:latest1
+          docker tag us.gcr.io/${{ vars.PROJECT_ID }}/result:${{ github.sha }} us.gcr.io/${{ vars.PROJECT_ID }}/result:latest2
 
       - name: Push Image to GCR
         run: |
           docker push us.gcr.io/${{ vars.PROJECT_ID }}/result:${{ github.sha }}
-          docker push us.gcr.io/${{ vars.PROJECT_ID }}/result:latest1
+          docker push us.gcr.io/${{ vars.PROJECT_ID }}/result:latest2
